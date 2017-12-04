@@ -1,0 +1,19 @@
+parameters:
+  template.paths:
+    - "%template_dir%/templates/"
+  translation.path: "%template_dir%/translate"
+  logger.name: "SuperTheme"
+  logger.path: "%template_dir%/var/logs.log"
+  logger.level: "WARNING"
+
+services:
+  timber:
+    class: "Timber\\Timber"
+  logger:
+    class: "Monolog\\Logger"
+    arguments: ["%logger.name%"]
+    calls:
+      - ["pushHandler", ["@logger.stream"]]
+  logger.stream:
+    class: "Monolog\\Handler\\StreamHandler"
+    arguments: ["%logger.path%", "%logger.level%"]

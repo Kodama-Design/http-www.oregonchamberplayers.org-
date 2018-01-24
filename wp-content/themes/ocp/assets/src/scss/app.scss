@@ -1,0 +1,173 @@
+@import "settings";
+@import "font-awesome";
+@import "foundation";
+@include foundation-everything(true);
+@include foundation-flex-classes;
+@include foundation-flex-grid;
+
+.button {
+  text-transform: uppercase;
+  &.warning {
+    color: $white;
+  }
+}
+
+// center donation form
+#et_builder_outer_content form.text-center {
+  text-align: center;
+}
+
+// divi links
+.et_divi_builder #et_builder_outer_content .et_overlay:before,
+.et_divi_builder #et_builder_outer_content .et_pb_bg_layout_light .et_pb_more_button,
+.et_divi_builder #et_builder_outer_content .et_pb_bg_layout_light .et_pb_newsletter_button,
+.et_divi_builder #et_builder_outer_content .et_pb_bg_layout_light .et_pb_promo_button,
+.et_divi_builder #et_builder_outer_content .et_pb_bg_layout_light.et_pb_module.et_pb_button,
+.et_divi_builder #et_builder_outer_content .et_pb_contact_submit,
+.et_divi_builder #et_builder_outer_content .et_pb_pricing li a,
+.et_divi_builder #et_builder_outer_content .et_pb_pricing_table_button,
+.et_divi_builder #et_builder_outer_content .et_pb_sum {
+  color: $anchor-color;
+}
+.et_divi_builder #et_builder_outer_content .et_pb_filterable_portfolio .et_pb_portfolio_filters li a.active,
+.et_divi_builder #et_builder_outer_content .et_pb_filterable_portfolio .et_pb_portofolio_pagination ul li a.active,
+.et_divi_builder #et_builder_outer_content .et_pb_gallery .et_pb_gallery_pagination ul li a.active,
+.et_divi_builder #et_builder_outer_content .et_pb_member_social_links a:hover,
+.et_divi_builder #et_builder_outer_content .woocommerce-page #content input.button:hover .et_pb_widget li a:hover {
+  color: $anchor-color-hover;
+}
+
+// divi button
+.et_divi_builder #et_builder_outer_content .et_pb_module.et_pb_button {
+  height: rem-calc(200px);
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+.et_divi_builder #et_builder_outer_content .et_pb_bg_layout_light .et_pb_button:hover,
+.et_divi_builder #et_builder_outer_content .et_pb_bg_layout_light.et_pb_button:hover,
+.et_divi_builder #et_builder_outer_content .et_pb_contact_reset:hover,
+.et_divi_builder #et_builder_outer_content .et_pb_contact_submit:hover,
+.et_divi_builder #et_builder_outer_content .et_pb_pricing_table_button:hover {
+  background-color: $secondary-color;
+}
+
+// divi audio
+.et_pb_audio_module {
+  background-color: $anchor-color !important;
+}
+.mejs-time-handle {
+  position: relative;
+  top: -3px;
+}
+.mejs-time-float-corner {
+  left: 17px;
+}
+.et_divi_builder #et_builder_outer_content .mejs-container .mejs-controls .mejs-time {
+  padding: 0 12px 0;
+}
+.et_divi_builder #et_builder_outer_content .et_audio_container .mejs-controls .mejs-time-rail .mejs-time-loaded,
+.et_divi_builder #et_builder_outer_content .et_audio_container .mejs-time.mejs-currenttime-container {
+  display: block !important;
+}
+
+// gravity forms
+.gform_body ul {
+  list-style-type: none;
+  margin-left: 0;
+}
+.gfield_error {
+  input[type=text], input[type=email], textarea {
+    border: 1px solid $anchor-color;
+    background-color: scale_color($anchor-color, $lightness: 60%);
+    color: $anchor-color;
+  }
+}
+.gform_confirmation_wrapper {
+  margin-bottom: $global-padding;
+}
+
+  // banner + copyright
+.banner, .copyright {
+  background-color: $dark-gray;
+  color: $white;
+  .menu {
+    a {
+      color: $white;
+      font-size: rem-calc(12px);
+      text-transform: uppercase;
+      transition: background-color 500ms;
+      &:hover {
+        background-color: $black;
+      }
+    }
+    li:last-of-type a {
+      background-color: $warning-color;
+      &:hover {
+        background-color: scale-color($warning-color, $lightness: -15%);
+      }
+    }
+  }
+}
+.copyright {
+  color: $secondary-color;
+  padding: $global-padding 0;
+  text-align: center;
+  a {
+    color: $secondary-color;
+    transition: color 500ms linear;
+    &:hover {
+      color: $white;
+    }
+  }
+}
+
+// header
+.header {
+  background-color: $secondary-color;
+
+  .menu a {
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: $global-padding;
+    transition: color 500ms linear;
+    &:hover {
+      background-color: scale-color($secondary-color, $lightness: -15%);
+    }
+  }
+}
+
+// footer
+.footer {
+  background-color: $anchor-color;
+  color: $secondary-color;
+  padding: $global-padding*2 0 $global-padding;
+
+  h4 {
+    color: $secondary-color;
+  }
+  a {
+    color: $secondary-color;
+    transition: background-color 500ms;
+    &:hover {
+      color: $white;
+    }
+  }
+  label {
+    color: $secondary-color;
+  }
+  .button {
+    background-color: $warning-color;
+    transition: background-color 500ms linear;
+    &:hover {
+      background-color: scale_color($warning-color, $lightness: -15%);
+    }
+  }
+  .menu {
+    a {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}

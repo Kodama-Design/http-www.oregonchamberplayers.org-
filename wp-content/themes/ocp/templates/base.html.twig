@@ -1,3 +1,77 @@
-<h1>Loaded</h1>
-<h1>{{ post.title }}</h1>
-{{ post.content }}
+<!doctype html>
+<html class="no-js" {{ site.language_attributes }}>
+<head>
+    <meta charset="{{ site.charset }}" />
+    <title>
+        {% if wp_title %}
+            {{ wp_title }} - {{ site.name }}
+        {% else %}
+            {{ site.name }}
+        {% endif %}
+    </title>
+    <meta name="description" content="{{ site.description }}">
+    <link rel="stylesheet" href="{{ site.theme.link }}/style.css" type="text/css" media="screen" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="author" href="{{ site.theme.link }}/humans.txt" />
+    <link rel="pingback" href="{{ site.pingback_url }}" />
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Cantarell:400,400i,700,700i" rel="stylesheet">
+    {{function('wp_head')}}
+</head>
+<body class="{{body_class}}">
+    <div class="banner">
+        <div class="row small-collapse">
+            <div class="column">
+                <ul class="dropdown align-right menu" data-dropdown-menu>
+                    <li><a href="">Login</a></li>
+                    <li><a href="">Donate</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <header class="header">
+        <ul class="dropdown menu align-center" data-dropdown-menu>
+            {% for item in main_menu.get_items %}
+                <a href="{{ item.link }}">{{ item.title }}</a>
+            {% endfor %}
+        </ul>
+    </header>
+
+    <div id="content">
+        {{ post.content }}
+    </div>
+
+    <footer class="footer">
+        <div class="row">
+            <div class="small-12 large-6 columns">
+                <h4>Navigation</h4>
+                <ul class="vertical menu">
+                    {% for item in footer_menu.get_items %}
+                        <a href="{{ item.link }}">{{ item.title }}</a>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="small-12 large-6 columns">
+                <h4>Contact Us</h4>
+                {{ function('do_shortcode', '[gravityform id="1" title="false" description="false"]') }}
+            </div>
+        </div>
+    </footer>
+    
+    <div class="copyright">
+        <div class="row small-collapse">
+            <div class="column">
+                &copy; {{ 'now' | date('Y') }} All Rights Reserved. Webs design and development by Robert Parker - <a href="https://robert-parker.me">Portland web design and development</a>
+            </div>
+        </div>
+    </div>
+
+    {% block footer %}
+        <footer id="footer">
+        </footer>
+        {{ function('wp_footer') }}
+    {% endblock %}
+</body>
+</html>

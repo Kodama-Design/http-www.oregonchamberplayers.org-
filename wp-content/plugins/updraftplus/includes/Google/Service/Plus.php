@@ -1077,7 +1077,7 @@ class Google_Service_Plus_ActivityObject extends Google_Collection
   protected $resharersType = 'Google_Service_Plus_ActivityObjectResharers';
   protected $resharersDataType = '';
   public $url;
-
+
 
   public function setActor(Google_Service_Plus_ActivityObjectActor $actor)
   {

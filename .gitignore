@@ -14,3 +14,4 @@ wp-content/uploads/
 wp-content/wp-cache-config.php
 wp-content/mu-plugins
 wp-content/mysql.sql
+wp-content/wflogs

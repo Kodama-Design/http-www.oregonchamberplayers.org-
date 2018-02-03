@@ -24,8 +24,21 @@
         <div class="row small-collapse">
             <div class="column">
                 <ul class="dropdown align-right menu" data-dropdown-menu>
-                    <li><a href="">Login</a></li>
-                    <li><a href="">Donate</a></li>
+                    <li>{{ function("wp_loginout") }}</li>
+                    <li>
+                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                            <input name="cmd" value="_donations" type="hidden">
+                            <input name="business" value="orchplayers@wans.net" type="hidden">
+                            <input name="no_shipping" value="0" type="hidden">
+                            <input name="no_note" value="1" type="hidden">
+                            <input name="currency_code" value="USD" type="hidden">
+                            <input name="tax" value="0" type="hidden">
+                            <input name="lc" value="US" type="hidden">
+                            <input name="bn" value="PP-DonationsBF" type="hidden">
+                            <button type="submit" class="warning button">Donate</button>
+                            <img alt="" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" border="0" class="hide">
+                        </form>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -46,6 +59,25 @@
     <footer class="footer">
         <div class="row">
             <div class="small-12 large-6 columns">
+                <h4>Get in Touch</h4>
+                <ul class="menu">
+                    <li>
+                        <a href="https://www.facebook.com/Oregon-Chamber-Players-Junior-Symph-of-Vancouver-Northwest-Oboe-Seminar-156655621035479/" target="_blank">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="tel:3606964084">
+                            <i class="fa fa-phone"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.google.com/maps/dir/''/oregon+chamber+players/data=!4m5!4m4!1m0!1m2!1m1!1s0x5495a59d217cd789:0x960343c38256549?sa=X&ved=0ahUKEwjkhpTpqvHYAhVU5mMKHZwpDd8Q9RcIeDAO">
+                            <i class="fa fa-home"></i>
+                        </a>
+                    </li>
+                </ul>
+
                 <h4>Navigation</h4>
                 <ul class="vertical menu">
                     {% for item in footer_menu.get_items %}
@@ -54,7 +86,7 @@
                 </ul>
             </div>
             <div class="small-12 large-6 columns">
-                <h4>Contact Us</h4>
+                <h4>Send us a message</h4>
                 {{ function('do_shortcode', '[gravityform id="1" title="false" description="false"]') }}
             </div>
         </div>

@@ -27,7 +27,7 @@
 .et_divi_builder #et_builder_outer_content .et_pb_pricing li a,
 .et_divi_builder #et_builder_outer_content .et_pb_pricing_table_button,
 .et_divi_builder #et_builder_outer_content .et_pb_sum {
-  color: $anchor-color;
+  color: $white;
 }
 .et_divi_builder #et_builder_outer_content .et_pb_filterable_portfolio .et_pb_portfolio_filters li a.active,
 .et_divi_builder #et_builder_outer_content .et_pb_filterable_portfolio .et_pb_portofolio_pagination ul li a.active,
@@ -50,7 +50,11 @@
 .et_divi_builder #et_builder_outer_content .et_pb_contact_reset:hover,
 .et_divi_builder #et_builder_outer_content .et_pb_contact_submit:hover,
 .et_divi_builder #et_builder_outer_content .et_pb_pricing_table_button:hover {
-  background-color: $secondary-color;
+  background-color: $anchor-color;
+  padding: 6px 20px;
+  &:after {
+    display: none;
+  }
 }
 
 // divi audio
@@ -90,7 +94,7 @@
 
   // banner + copyright
 .banner, .copyright {
-  background-color: $dark-gray;
+  background-color: $black;
   color: $white;
   .menu {
     a {
@@ -102,10 +106,9 @@
         background-color: $black;
       }
     }
-    li:last-of-type a {
-      background-color: $warning-color;
+    li:last-of-type .button {
       &:hover {
-        background-color: scale-color($warning-color, $lightness: -15%);
+        color: $white;
       }
     }
   }
@@ -125,15 +128,16 @@
 
 // header
 .header {
-  background-color: $secondary-color;
+  background-color: $anchor-color;
 
   .menu a {
+    color: $secondary-color;
     text-transform: uppercase;
     font-weight: bold;
     padding: $global-padding;
     transition: color 500ms linear;
     &:hover {
-      background-color: scale-color($secondary-color, $lightness: -15%);
+      background-color: scale_color($anchor-color, $lightness: -15%);
     }
   }
 }
@@ -153,6 +157,10 @@
     &:hover {
       color: $white;
     }
+    .fa {
+      font-size: rem-calc(32px);
+      margin-right: $global-margin;
+    }
   }
   label {
     color: $secondary-color;
@@ -165,6 +173,7 @@
     }
   }
   .menu {
+    margin-bottom: $global-margin;
     a {
       padding-left: 0;
       padding-right: 0;

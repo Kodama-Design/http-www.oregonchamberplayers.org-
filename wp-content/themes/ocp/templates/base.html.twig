@@ -53,7 +53,9 @@
     </header>
 
     <div id="content">
-        {{ post.content }}
+        {% block content %}
+            {{ post.content }}
+        {% endblock %}
     </div>
 
     <footer class="footer">

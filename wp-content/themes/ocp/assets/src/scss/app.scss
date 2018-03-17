@@ -92,14 +92,19 @@
   margin-bottom: $global-padding;
 }
 
-  // banner + copyright
+// 404
+.not-found {
+  padding: 4rem 1rem;
+}
+
+// banner + copyright
 .banner, .copyright {
   background-color: $black;
   color: $white;
   .menu {
     a {
       color: $white;
-      font-size: rem-calc(12px);
+      font-size: rem-calc(14.4px);
       text-transform: uppercase;
       transition: background-color 500ms;
       &:hover {
